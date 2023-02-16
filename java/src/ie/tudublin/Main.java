@@ -35,7 +35,8 @@ public class Main
 		penny.setName("Penny");
 		penny.speak();
 
-		helloProcessing();
+		bugZap();
+		//helloProcessing();
 		//starMap();
 	}
 	
