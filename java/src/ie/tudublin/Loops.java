@@ -28,7 +28,7 @@ public class Loops extends PApplet {
 	float off = 0;
 
 	public void draw() {
-		background(0);
+		background(255);
 		fill(255);
 		//noStroke();
 		stroke(0);
@@ -74,6 +74,7 @@ public class Loops extends PApplet {
 		}
 		
 	*/
+	/*
 		float lineSpace = screenSize/boxes;
 
 		background(255,255,255);
@@ -85,9 +86,10 @@ public class Loops extends PApplet {
 				
 			}
 			
-		}
+		}*/
 		
-		
+		float angle = (float) (180 * Math.PI / 180);
+		line(screenSize/2, screenSize/2,(screenSize/2) + (float) (200*Math.sin(angle)), (screenSize/2)+(float) (200*Math.cos(angle)));
 
 		/*switch (mode) {
 			case 0:
