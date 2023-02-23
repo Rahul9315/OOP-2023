@@ -2,6 +2,8 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
+import javax.swing.border.Border;
+
 import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
@@ -9,7 +11,7 @@ import processing.data.TableRow;
 public class StarMap extends PApplet
 {
 	ArrayList<Star> stars = new ArrayList<Star>();
-
+	
 	public void settings()
 	{
 		size(500, 500);
@@ -54,10 +56,11 @@ public class StarMap extends PApplet
 	public void drawGrid()
 	{
 		stroke(0, 255, 255);
-		float border = width * 0.1f;
+		
 
 		for(int i = -5 ; i <= 5 ; i ++)
 		{
+			float border = width * 0.1f;
 			float x = map(i, -5, 5, border, width - border);
 			line(x, border, x, height - border);
 			line(border, x, width - border, x);
@@ -81,12 +84,36 @@ public class StarMap extends PApplet
 
 		return d + ((howFar / r1) * r2);
 	}
+	float mx = 0;
+	float my = 0;
+	float nx = 0;
+	float ny = 0;
 		
+	public void mousePressed(){
+		mx = mouseX;
+		my = mouseY;
+	}
+	public void mouseReleased(){
+		ny = mouseY;
+		nx = mouseX;
+	}
+	
 	public void draw()
 	{	
-		strokeWeight(1);		
-
+		
+		float border = width * 0.1f;
+		strokeWeight(1);
 		drawGrid();
 		displayStars();
-	}
-}
+		if (mx != 0 || my != 0 || nx!=0 || ny!=0) {
+			line(mx, my,nx, ny);
+			float root = ((mx-nx)*(mx-nx)) + ((my - ny)*(my - ny));
+		float dist = Maths.sqrt(root);
+
+		textAlign(CENTER, CENTER);
+            text("Distance is "+ dist +"  parsecs", width /2 , height - (border / 2));
+		
+	
+		}
+	}	
+}	
