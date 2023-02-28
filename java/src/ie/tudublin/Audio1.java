@@ -57,6 +57,7 @@ public class Audio1 extends PApplet
 		}
 		float average = total / (float)ab.size();
 		float r = average *200;
+		fill(0,255,255);
 		circle(100, total, r);
 	}
 }
