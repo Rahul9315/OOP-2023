@@ -13,8 +13,7 @@ public class Life extends PApplet
 	public void setup() {
 		colorMode(HSB);
 		background(0);
-
-		
+		board = LifeBoard(size; 1000,this);
 		
 	}
 
@@ -22,6 +21,8 @@ public class Life extends PApplet
 	
 	public void draw()
 	{	
+		background(0);
+		
 		
 	}
 }
